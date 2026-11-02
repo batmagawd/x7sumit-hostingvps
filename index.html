@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#080d18" />
+  <title>X7SUMIT HOSTING — Control Panel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#"><span class="brand-mark">X7</span><span><b>X7SUMIT</b><small>HOSTING</small></span></a>
+      <div class="side-label">WORKSPACE</div>
+      <nav class="nav">
+        <button class="nav-link active" data-page="overview"><span>▦</span> Overview</button>
+        <button class="nav-link" data-page="servers"><span>▣</span> My Servers</button>
+        <button class="nav-link" data-page="files"><span>▤</span> File Manager</button>
+        <button class="nav-link" data-page="console"><span>⌘</span> Console</button>
+        <button class="nav-link" data-page="deploy"><span>⇧</span> Deployments</button>
+      </nav>
+      <div class="side-label">MANAGEMENT</div>
+      <nav class="nav">
+        <button class="nav-link" data-page="billing"><span>◈</span> Usage & Plans</button>
+        <button class="nav-link" data-page="settings"><span>⚙</span> Settings</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="help-card"><div class="help-icon">?</div><b>Need some help?</b><p>Check setup instructions and documentation.</p><a href="README.md">View documentation ↗</a></div>
+        <div class="profile"><div class="avatar">S</div><div><b>Sumit</b><small>Free account</small></div><span class="dots">•••</span></div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="mobile-menu" id="menuBtn" aria-label="Open menu">☰</button>
+        <div class="crumb">Workspace <span>/</span> <b id="pageCrumb">Overview</b></div>
+        <div class="top-actions"><span class="status-pill"><i></i> All systems normal</span><button class="icon-btn" title="Notifications">♧</button><div class="top-avatar">S</div></div>
+      </header>
+
+      <section class="page active-page" id="page-overview">
+        <div class="welcome-row"><div><div class="eyebrow">CONTROL CENTER</div><h1>Welcome back, Sumit <span class="wave">✦</span></h1><p class="muted">Manage your Python applications from one place.</p></div><button class="primary-btn" data-goto="deploy">＋ New deployment</button></div>
+        <div class="notice"><span class="notice-icon">ⓘ</span><div><b>Demo dashboard is active</b><p>This is the static frontend preview. Connect a backend/VPS to run real Python processes.</p></div><button class="close-notice" aria-label="Dismiss">×</button></div>
+        <div class="stats-grid">
+          <article class="stat-card"><div class="stat-top"><span>Active servers</span><span class="stat-icon">▣</span></div><div class="stat-number">03 <small> / 05</small></div><div class="stat-foot"><span class="green-dot"></span> 3 servers online</div></article>
+          <article class="stat-card"><div class="stat-top"><span>CPU usage</span><span class="stat-icon">⌁</span></div><div class="stat-number">24<small>%</small></div><div class="meter"><i style="width:24%"></i></div><div class="stat-foot">Across all demo servers</div></article>
+          <article class="stat-card"><div class="stat-top"><span>Memory usage</span><span class="stat-icon">▥</span></div><div class="stat-number">2.4<small> GB</small></div><div class="meter"><i style="width:48%"></i></div><div class="stat-foot">Of 5 GB allocated (demo)</div></article>
+          <article class="stat-card"><div class="stat-top"><span>Storage used</span><span class="stat-icon">▤</span></div><div class="stat-number">8.6<small> GB</small></div><div class="meter"><i style="width:35%"></i></div><div class="stat-foot">Of 25 GB allocated (demo)</div></article>
+        </div>
+        <div class="content-grid">
+          <article class="panel server-panel"><div class="panel-heading"><div><h2>Your servers</h2><p class="muted">Quick overview of your applications</p></div><button class="text-btn" data-goto="servers">View all ↗</button></div>
+            <div class="server-list">
+              <div class="server-row"><div class="server-symbol">Py</div><div class="server-info"><b>telegram-bot</b><small>Python 3.12 · Frankfurt</small></div><span class="running"><i></i> Running</span><button class="more-btn" data-toast="Demo action only — connect a backend to control servers.">•••</button></div>
+              <div class="server-row"><div class="server-symbol blue">Py</div><div class="server-info"><b>music-bot</b><small>Python 3.11 · Singapore</small></div><span class="running"><i></i> Running</span><button class="more-btn" data-toast="Demo action only — connect a backend to control servers.">•••</button></div>
+              <div class="server-row"><div class="server-symbol purple">Py</div><div class="server-info"><b>test-project</b><small>Python 3.12 · Mumbai</small></div><span class="stopped"><i></i> Stopped</span><button class="more-btn" data-toast="Demo action only — connect a backend to control servers.">•••</button></div>
+            </div>
+          </article>
+          <article class="panel activity-panel"><div class="panel-heading"><div><h2>Recent activity</h2><p class="muted">Latest workspace events</p></div><span class="live-tag">LIVE PREVIEW</span></div>
+            <div class="activity"><span class="activity-dot blue-dot"></span><div><b>telegram-bot started</b><small>Server action · 12 minutes ago</small></div></div>
+            <div class="activity"><span class="activity-dot"></span><div><b>Deployment successful</b><small>music-bot · Yesterday</small></div></div>
+            <div class="activity"><span class="activity-dot purple-dot"></span><div><b>Requirements installed</b><small>test-project · 2 days ago</small></div></div>
+          </article>
+        </div>
+        <article class="panel quick-panel"><div class="panel-heading"><div><h2>Quick actions</h2><p class="muted">Common tasks, one click away</p></div></div><div class="quick-actions"><button data-goto="files"><span>＋</span><b>Upload files</b><small>Add your Python project</small></button><button data-goto="deploy"><span>⇧</span><b>New deployment</b><small>Connect a repository</small></button><button data-goto="console"><span>⌘</span><b>Open console</b><small>View application logs</small></button></div></article>
+      </section>
+
+      <section class="page" id="page-servers"><div class="page-title"><div><div class="eyebrow">WORKSPACE</div><h1>My Servers</h1><p class="muted">View and manage your Python applications.</p></div><button class="primary-btn" data-goto="deploy">＋ Create server</button></div><div class="panel"><div class="table-wrap"><table><thead><tr><th>SERVER</th><th>REGION</th><th>STATUS</th><th>RUNTIME</th><th>ACTION</th></tr></thead><tbody><tr><td><b>telegram-bot</b><small>Python 3.12</small></td><td>Frankfurt</td><td><span class="running"><i></i> Running</span></td><td>2d 14h</td><td><button class="small-btn" data-toast="Backend connection required for server controls.">Manage</button></td></tr><tr><td><b>music-bot</b><small>Python 3.11</small></td><td>Singapore</td><td><span class="running"><i></i> Running</span></td><td>8h 21m</td><td><button class="small-btn" data-toast="Backend connection required for server controls.">Manage</button></td></tr><tr><td><b>test-project</b><small>Python 3.12</small></td><td>Mumbai</td><td><span class="stopped"><i></i> Stopped</span></td><td>—</td><td><button class="small-btn" data-toast="Backend connection required for server controls.">Manage</button></td></tr></tbody></table></div></div></section>
+
+      <section class="page" id="page-files"><div class="page-title"><div><div class="eyebrow">STORAGE</div><h1>File Manager</h1><p class="muted">Preview project files and upload a local file.</p></div><label class="primary-btn upload-label">↑ Upload file<input type="file" id="fileInput" multiple hidden></label></div><div class="panel"><div class="file-toolbar"><span class="muted">/ home / projects</span><span class="muted" id="fileCount">4 items</span></div><div id="fileList"><div class="file-row"><span class="file-type py">PY</span><b>bot.py</b><small>Python file</small><span>4.2 KB</span></div><div class="file-row"><span class="file-type txt">TXT</span><b>requirements.txt</b><small>Text file</small><span>0.8 KB</span></div><div class="file-row"><span class="file-type js">JS</span><b>config.js</b><small>JavaScript file</small><span>1.1 KB</span></div><div class="file-row"><span class="file-type folder">DIR</span><b>data</b><small>Folder</small><span>—</span></div></div><p class="file-note">Uploads in this preview stay in your browser session only. Real server storage needs a backend API.</p></div></section>
+
+      <section class="page" id="page-console"><div class="page-title"><div><div class="eyebrow">MONITORING</div><h1>Console</h1><p class="muted">Sample application output.</p></div><button class="outline-btn" id="clearConsole">Clear console</button></div><div class="console-box"><div class="console-head"><span><i></i> x7sumit@console:~</span><span>DEMO OUTPUT</span></div><div class="console-output" id="consoleOutput"><p><span class="time">[09:41:02]</span> <span class="success-text">INFO</span> X7SUMIT console preview initialized.</p><p><span class="time">[09:41:03]</span> <span class="success-text">INFO</span> Sample process: telegram-bot</p><p><span class="time">[09:41:04]</span> <span class="info-text">INFO</span> Waiting for backend connection...</p><p><span class="time">[09:41:05]</span> <span class="warn-text">DEMO</span> This console does not execute shell commands.</p><p class="prompt-line">x7sumit@panel:~$ <span class="cursor"></span></p></div></div></section>
+
+      <section class="page" id="page-deploy"><div class="page-title"><div><div class="eyebrow">DEPLOYMENT</div><h1>New deployment</h1><p class="muted">Set up a Python app from a Git repository.</p></div></div><div class="panel deploy-panel"><div class="step-head"><span class="step-number">01</span><div><h2>Connect repository</h2><p class="muted">Enter the public GitHub repository URL.</p></div></div><label class="field-label" for="repoUrl">Repository URL</label><input class="field" id="repoUrl" placeholder="https://github.com/username/project" /><div class="form-grid"><div><label class="field-label" for="branch">Branch</label><input class="field" id="branch" value="main" /></div><div><label class="field-label" for="entry">Start file</label><input class="field" id="entry" value="bot.py" /></div></div><div class="step-head second"><span class="step-number">02</span><div><h2>Runtime settings</h2><p class="muted">Choose your Python runtime and install file.</p></div></div><div class="form-grid"><div><label class="field-label">Python version</label><select class="field"><option>Python 3.12</option><option>Python 3.11</option><option>Python 3.10</option></select></div><div><label class="field-label">Dependencies file</label><input class="field" value="requirements.txt" /></div></div><button class="primary-btn deploy-submit" id="deployBtn">Review deployment →</button><p class="file-note">Preview only: this form does not clone repositories or launch Python. A secure backend worker is required.</p></div></section>
+
+      <section class="page" id="page-billing"><div class="page-title"><div><div class="eyebrow">ACCOUNT</div><h1>Usage & Plans</h1><p class="muted">Example resource allocation for the preview account.</p></div></div><div class="stats-grid"><article class="stat-card"><div class="stat-top"><span>CPU allocation</span><span class="stat-icon">⌁</span></div><div class="stat-number">2 <small>cores</small></div><div class="stat-foot">Demo allocation</div></article><article class="stat-card"><div class="stat-top"><span>RAM allocation</span><span class="stat-icon">▥</span></div><div class="stat-number">5 <small>GB</small></div><div class="stat-foot">Demo allocation</div></article><article class="stat-card"><div class="stat-top"><span>Disk space</span><span class="stat-icon">▤</span></div><div class="stat-number">25 <small>GB</small></div><div class="stat-foot">Demo allocation</div></article></div><div class="panel plan-card"><span class="plan-label">CURRENT PLAN</span><h2>Starter <span>FREE PREVIEW</span></h2><p class="muted">These are sample values, not an active hosting subscription.</p></div></section>
+
+      <section class="page" id="page-settings"><div class="page-title"><div><div class="eyebrow">PREFERENCES</div><h1>Settings</h1><p class="muted">Workspace profile and interface preferences.</p></div></div><div class="panel settings-panel"><div class="setting-row"><div><b>Workspace name</b><small>Displayed in your control panel.</small></div><input class="field compact-field" value="X7SUMIT HOSTING" /></div><div class="setting-row"><div><b>Theme</b><small>Current interface appearance.</small></div><span class="theme-chip"><i></i> Black + Electric Blue</span></div><div class="setting-row"><div><b>Account email</b><small>Demo profile — no account is connected.</small></div><span class="muted">Not configured</span></div></div></section>
+      <footer>© 2026 <b>X7SUMIT HOSTING</b> <span>Built for developers · Frontend preview</span></footer>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
